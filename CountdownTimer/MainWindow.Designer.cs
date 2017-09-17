@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.valign_group = new System.Windows.Forms.GroupBox();
             this.vcustom_px = new System.Windows.Forms.NumericUpDown();
             this.vcustom = new System.Windows.Forms.RadioButton();
@@ -519,6 +520,7 @@
             this.Controls.Add(this.halign_group);
             this.Controls.Add(this.valign_group);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Tag = "";

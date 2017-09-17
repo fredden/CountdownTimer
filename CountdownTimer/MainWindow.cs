@@ -20,6 +20,16 @@ namespace CountdownTimer
             InitializeComponent();
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == NativeMethods.WM_SHOWME)
+            {
+                // This function will bring the control window to the front.
+                timerClick(null, null);
+            }
+            base.WndProc(ref m);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // Add 'screens' to the relevant group
@@ -202,7 +212,10 @@ namespace CountdownTimer
         private void timerClick(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Normal;
+            bool top = TopMost;
+            TopMost = true;
             BringToFront();
+            TopMost = top;
         }
 
         private void goButton_Click(object sender, EventArgs e)
@@ -341,6 +354,7 @@ namespace CountdownTimer
             if (!timerWindow.Visible)
             {
                 timerWindow.Show();
+                timerWindow.BringToFront();
             }
         }
 

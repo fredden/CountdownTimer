@@ -145,10 +145,10 @@ namespace CountdownTimer.Properties {
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
-        public decimal CountFrom {
+        [global::System.Configuration.DefaultSettingValueAttribute("11/30/2017 00:05:00")]
+        public global::System.DateTime CountFrom {
             get {
-                return ((decimal)(this["CountFrom"]));
+                return ((global::System.DateTime)(this["CountFrom"]));
             }
             set {
                 this["CountFrom"] = value;

@@ -256,7 +256,9 @@ namespace CountdownTimer
 
             if (radio_countFrom.Checked)
             {
-                endTime = DateTime.Now.AddMinutes((double)text_countFrom.Value);
+                endTime = DateTime.Now
+                    .AddMinutes(text_countFrom.Value.Minute)
+                    .AddSeconds(text_countFrom.Value.Second);
             } else
             {
                 endTime = text_countUntil.Value;

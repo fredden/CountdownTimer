@@ -32,8 +32,8 @@
     <Setting Name="Text_after" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="CountFrom" Type="System.Decimal" Scope="User">
-      <Value Profile="(Default)">5</Value>
+    <Setting Name="CountFrom" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">11/30/2017 00:05:00</Value>
     </Setting>
     <Setting Name="end_quit" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

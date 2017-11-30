@@ -49,7 +49,7 @@
             this.post_text_opt = new System.Windows.Forms.CheckBox();
             this.pre_text_opt = new System.Windows.Forms.CheckBox();
             this.text_countUntil = new System.Windows.Forms.DateTimePicker();
-            this.text_countFrom = new System.Windows.Forms.NumericUpDown();
+            this.text_countFrom = new System.Windows.Forms.DateTimePicker();
             this.radio_countUntil = new System.Windows.Forms.RadioButton();
             this.radio_countFrom = new System.Windows.Forms.RadioButton();
             this.goButton = new System.Windows.Forms.Button();
@@ -76,7 +76,6 @@
             this.halign_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hcustom_px)).BeginInit();
             this.textGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.text_countFrom)).BeginInit();
             this.font_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.borderWidth)).BeginInit();
             this.end_group.SuspendLayout();
@@ -297,14 +296,12 @@
             // 
             // text_countFrom
             // 
+            this.text_countFrom.CustomFormat = "mm:ss";
+            this.text_countFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.text_countFrom.Location = new System.Drawing.Point(109, 40);
-            this.text_countFrom.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
             this.text_countFrom.Name = "text_countFrom";
-            this.text_countFrom.Size = new System.Drawing.Size(40, 20);
+            this.text_countFrom.ShowUpDown = true;
+            this.text_countFrom.Size = new System.Drawing.Size(53, 20);
             this.text_countFrom.TabIndex = 2;
             // 
             // radio_countUntil
@@ -324,10 +321,10 @@
             this.radio_countFrom.AutoSize = true;
             this.radio_countFrom.Location = new System.Drawing.Point(6, 40);
             this.radio_countFrom.Name = "radio_countFrom";
-            this.radio_countFrom.Size = new System.Drawing.Size(189, 17);
+            this.radio_countFrom.Size = new System.Drawing.Size(194, 17);
             this.radio_countFrom.TabIndex = 0;
             this.radio_countFrom.TabStop = true;
-            this.radio_countFrom.Text = "Count down from                minutes";
+            this.radio_countFrom.Text = "Count down from                    mm:ss";
             this.radio_countFrom.UseVisualStyleBackColor = true;
             this.radio_countFrom.CheckedChanged += new System.EventHandler(this.ValidateForm);
             // 
@@ -534,7 +531,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.hcustom_px)).EndInit();
             this.textGroup.ResumeLayout(false);
             this.textGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.text_countFrom)).EndInit();
             this.font_group.ResumeLayout(false);
             this.font_group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.borderWidth)).EndInit();
@@ -563,7 +559,7 @@
         private System.Windows.Forms.GroupBox textGroup;
         private System.Windows.Forms.Button goButton;
         private System.Windows.Forms.DateTimePicker text_countUntil;
-        private System.Windows.Forms.NumericUpDown text_countFrom;
+        private System.Windows.Forms.DateTimePicker text_countFrom;
         private System.Windows.Forms.RadioButton radio_countUntil;
         private System.Windows.Forms.RadioButton radio_countFrom;
         private System.Windows.Forms.GroupBox font_group;

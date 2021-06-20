@@ -205,7 +205,10 @@ namespace CountdownTimer
             bgColour.ForeColor = (PerceivedBrightness(bgColour.BackColor) > 130 ? Color.Black : Color.White);
             bgColour.Enabled = !bgTransparent.Checked;
 
-            font_preview.Text = "15:00";
+            if (timerWindow ==null || !timerWindow.Visible)
+            {
+                font_preview.Text = "15:00";
+            }
 
             onEnd_flash_seconds.Enabled = onEnd_flash.Checked;
         }

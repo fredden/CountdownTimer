@@ -131,8 +131,10 @@ namespace CountdownTimer
             catch (ArgumentOutOfRangeException)
             {
                 vcustom_px.Value = vcustom_px.Minimum;
-                top.Checked = true;
             }
+            if (vcustom_px.Value == 0) { top.Checked = true; }
+            if (vcustom_px.Value == vcustom_px.Maximum / 2) { middle.Checked = true; }
+            if (vcustom_px.Value == vcustom_px.Maximum) { bottom.Checked = true; }
 
             switch (Properties.Settings.Default.HorizontalAlign)
             {
@@ -149,8 +151,10 @@ namespace CountdownTimer
             catch (ArgumentOutOfRangeException)
             {
                 hcustom_px.Value = hcustom_px.Minimum;
-                left.Checked = true;
             }
+            if (hcustom_px.Value == 0) { left.Checked = true; }
+            if (hcustom_px.Value == hcustom_px.Maximum / 2) { centre.Checked = true; }
+            if (hcustom_px.Value == hcustom_px.Maximum) { right.Checked = true; }
 
             if (Properties.Settings.Default.CountUntil)
             {

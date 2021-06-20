@@ -112,7 +112,10 @@ namespace CountdownTimer
 
         private void RestoreSettings()
         {
-            //TODO: read config and populate the correct fields
+            screens.ElementAt(Properties.Settings.Default.Screen).radio_obj.Checked = true;
+            // Calling 'ValidateForm' here will set the maximum values for the alignment fields.
+            ValidateForm(null, null);
+
             switch (Properties.Settings.Default.VerticalAlign)
             {
                 case 1: top.Checked = true; break;
@@ -148,8 +151,6 @@ namespace CountdownTimer
                 hcustom_px.Value = hcustom_px.Minimum;
                 left.Checked = true;
             }
-
-            screens.ElementAt(Properties.Settings.Default.Screen).radio_obj.Checked = true;
 
             if (Properties.Settings.Default.CountUntil)
             {

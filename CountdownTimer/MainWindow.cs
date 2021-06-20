@@ -120,7 +120,15 @@ namespace CountdownTimer
                 case 3: bottom.Checked = true; break;
                 default: vcustom.Checked = true; break;
             }
-            vcustom_px.Value = Properties.Settings.Default.Vertical_px;
+            try
+            {
+                vcustom_px.Value = Properties.Settings.Default.Vertical_px;
+            }
+            catch (System.ArgumentOutOfRangeException e)
+            {
+                vcustom_px.Value = vcustom_px.Minimum;
+                top.Checked = true;
+            }
 
             switch (Properties.Settings.Default.HorizontalAlign)
             {
@@ -129,7 +137,15 @@ namespace CountdownTimer
                 case 3: right.Checked = true; break;
                 default: hcustom.Checked = true; break;
             }
-            hcustom_px.Value = Properties.Settings.Default.Horizontal_px;
+            try
+            {
+                hcustom_px.Value = Properties.Settings.Default.Horizontal_px;
+            }
+            catch (System.ArgumentOutOfRangeException e)
+            {
+                hcustom_px.Value = hcustom_px.Minimum;
+                left.Checked = true;
+            }
 
             screens.ElementAt(Properties.Settings.Default.Screen).radio_obj.Checked = true;
 

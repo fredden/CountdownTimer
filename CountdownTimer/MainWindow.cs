@@ -120,11 +120,12 @@ namespace CountdownTimer
                 case 3: bottom.Checked = true; break;
                 default: vcustom.Checked = true; break;
             }
+
             try
             {
                 vcustom_px.Value = Properties.Settings.Default.Vertical_px;
             }
-            catch (System.ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException)
             {
                 vcustom_px.Value = vcustom_px.Minimum;
                 top.Checked = true;
@@ -137,11 +138,12 @@ namespace CountdownTimer
                 case 3: right.Checked = true; break;
                 default: hcustom.Checked = true; break;
             }
+
             try
             {
                 hcustom_px.Value = Properties.Settings.Default.Horizontal_px;
             }
-            catch (System.ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException)
             {
                 hcustom_px.Value = hcustom_px.Minimum;
                 left.Checked = true;
